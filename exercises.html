@@ -1,0 +1,95 @@
+<!-- exercises.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercises - Work-Life Balance for IT Interns</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header-image">
+        <h1>Practical Exercises</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="page1.html">Introduction</a>
+        <a href="page2.html">Time Management</a>
+        <a href="page3.html">Stress Management</a>
+        <a href="page4.html">Professional Growth</a>
+        <a href="page5.html">Work Habits</a>
+        <a href="exercises.html">Exercises</a>
+        <a href="groupwork.html">Group Work</a>
+    </nav>
+
+    <div class="container">
+        <h2>Exercise 1: File Organization Automation Script</h2>
+        <p><strong>Objective:</strong> Help junior interns practice process automation by creating a script that organizes files based on their types.</p>
+
+        <h3>Instructions:</h3>
+        <ol>
+            <li><strong>Task Overview:</strong></li>
+            <li>You are responsible for writing a simple automation script that organizes files into folders based on their type. This will help you practice basic scripting and automation.</li>
+            <li><strong>Scenario:</strong></li>
+            <p>You receive daily batches of files (images, PDFs, documents) that need to be sorted into folders. Your task is to create a script that:</p>
+            <ul>
+                <li>Scans a folder for files.</li>
+                <li>Automatically creates folders named "Images," "Documents," and "Miscellaneous."</li>
+                <li>Moves files into the appropriate folder based on their type.</li>
+            </ul>
+            <li><strong>Steps:</strong></li>
+            <p>Write a Python (or Bash) script that:</p>
+            <ul>
+                <li>Scans a directory for files.</li>
+                <li>Creates the necessary folders if they don’t exist.</li>
+                <li>Sorts the files into their respective folders based on the file type.</li>
+            </ul>
+        </ol>
+
+        <h3>Code Example:</h3>
+        <pre><code>
+import os
+import shutil
+
+# Define source folder
+source_folder = 'path_to_your_folder'
+
+# Create destination folders if they don't exist
+if not os.path.exists('Images'):
+    os.mkdir('Images')
+if not os.path.exists('Documents'):
+    os.mkdir('Documents')
+if not os.path.exists('Miscellaneous'):
+    os.mkdir('Miscellaneous')
+
+# Iterate over files in the folder
+for filename in os.listdir(source_folder):
+    if filename.endswith('.jpg') or filename.endswith('.png'):
+        shutil.move(os.path.join(source_folder, filename), 'Images')
+    elif filename.endswith('.pdf') or filename.endswith('.docx'):
+        shutil.move(os.path.join(source_folder, filename), 'Documents')
+    else:
+        shutil.move(os.path.join(source_folder, filename), 'Miscellaneous')
+        </code></pre>
+
+        <h3>Checklist:</h3>
+        <ul>
+            <li>The script should scan the folder and move files correctly.</li>
+            <li>The "Images," "Documents," and "Miscellaneous" folders should be automatically created if they don’t exist.</li>
+            <li>Be prepared to explain how your script works in a short write-up.</li>
+        </ul>
+
+        <h3>Submission:</h3>
+        <p>Submit your script and a 2-3 sentence explanation of what it does and how you wrote it.</p>
+
+        <!-- Quiz Button -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeQMaz4NydyoYWS7d8CWhFtRg2J_nnMKHrDmbnXTDEc1346AA/viewform?usp=sf_link" target="_blank" class="button" style="color: white;">Take the Quiz</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Work-Life Balance Guide for IT Interns</p>
+    </footer>
+
+</body>
+</html>
